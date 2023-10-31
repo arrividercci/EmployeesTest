@@ -10,6 +10,13 @@
 <p>
     <a class="btn btn-primary" asp-action="Create">Додати нового співробітника</a>
 </p>
+<form asp-action="Index">
+    <div class="form-inline form-group">
+        <label class="control-label">Пошук: </label>
+        <input name="searchString" class="form-control" />
+        <input type="submit" value="Фильтр" class="btn btn-primary mt-1" />
+    </div>
+</form>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -54,8 +61,7 @@
                     @Html.DisplayFor(modelItem => item.Birthday)
                 </td>
                 <td>
-                    @{var birthday = item.Birthday.ToShortDateString();}
-                    @Html.DisplayFor(modelItem => birthday)
+                    @Html.DisplayFor(modelItem => item.Departament)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Position)

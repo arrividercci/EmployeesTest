@@ -14,10 +14,12 @@ namespace EmployeesTest.Controllers
             this.employeeService = employeeService;
         }
 
-
-        public ActionResult Index(int? searchType, string mapString = "")
+        public ActionResult Index(string searchString = "")
         {
-            var employees = employeeService.GetAll();
+            var employees = employeeService
+                .GetByCondition(emploee => emploee.LastName.Contains(searchString,StringComparison.OrdinalIgnoreCase) || 
+                emploee.Departament.Contains(searchString, StringComparison.OrdinalIgnoreCase) || 
+                emploee.Position.Contains(searchString, StringComparison.OrdinalIgnoreCase));
             return View(employees);
         }
 

@@ -29,7 +29,7 @@ namespace EmployeesTest.Services
 
         public List<Employee> GetByCondition(Func<Employee, bool> expression)
         {
-            return (List<Employee>)database.employees.Where(expression);
+            return database.employees.Where(expression).ToList();
         }
 
         public Employee GetById(Guid id)
