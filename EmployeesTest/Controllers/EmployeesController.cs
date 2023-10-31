@@ -14,14 +14,13 @@ namespace EmployeesTest.Controllers
             this.employeeService = employeeService;
         }
 
-        // GET: EmployeesController
+
         public ActionResult Index(int? searchType, string mapString = "")
         {
             var employees = employeeService.GetAll();
             return View(employees);
         }
 
-        // GET: EmployeesController/Details/5
         public ActionResult Details(Guid id)
         {
             var employee = employeeService.GetById(id);
@@ -29,13 +28,13 @@ namespace EmployeesTest.Controllers
             return View(employee);
         }
 
-        // GET: EmployeesController/Create
+
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: EmployeesController/Create
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Employee employee)
@@ -51,14 +50,14 @@ namespace EmployeesTest.Controllers
             }
         }
 
-        // GET: EmployeesController/Edit/5
+
         public ActionResult Edit(Guid id)
         {
             var employee = employeeService.GetById(id);
             return View(employee);
         }
 
-        // POST: EmployeesController/Edit/5
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Guid id, Employee employee)
@@ -74,7 +73,7 @@ namespace EmployeesTest.Controllers
             }
         }
 
-        // GET: EmployeesController/Delete/5
+
         public ActionResult Delete(Guid id)
         {
             var employee = employeeService.GetById(id);
@@ -82,7 +81,7 @@ namespace EmployeesTest.Controllers
             return View(employee);
         }
 
-        // POST: EmployeesController/Delete/5
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(Guid id, Employee employee)
