@@ -58,7 +58,10 @@
                     @Html.DisplayFor(modelItem => item.Patronimyc)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Birthday)
+                    @{
+                        var birthday = item.Birthday.ToShortDateString();
+                    }
+                    @Html.DisplayFor(modelItem => birthday)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Departament)

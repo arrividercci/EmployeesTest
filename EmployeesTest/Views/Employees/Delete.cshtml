@@ -26,8 +26,11 @@
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Birthday)
         </dt>
+        @{
+            var birthday = Model.Birthday.ToShortDateString();
+        }
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Birthday)
+            @Html.DisplayFor(model => birthday)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Departament)
